@@ -11,7 +11,7 @@ services:
         ports:
             - 5173:5173
         volumes:
-            - .:/var/www:cached
+            - .:/var/www
 
     ####################################################################################################
     # Nginx
@@ -20,7 +20,7 @@ services:
         container_name: laravel_nginx
         image: nginx
         ports:
-            - 80:80
+            - 30041:80
         volumes:
             - .:/var/www
             - .docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
@@ -35,7 +35,7 @@ services:
         container_name: laravel_mysql
         image: mysql:8.1
         ports:
-            - 3306:3306
+            - 3323:3306
         volumes:
             - .docker/db/data:/var/lib/mysql
             - .docker/logs:/var/log/mysql

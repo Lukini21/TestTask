@@ -3,7 +3,6 @@ FROM php:8.2-fpm
 COPY php.ini /usr/local/etc/php/
 COPY docker.conf /usr/local/etc/php-fpm.d/docker.conf
 COPY .bashrc /root/
-
 RUN apt-get update \
   && apt-get install -y build-essential zlib1g-dev default-mysql-client curl gnupg procps vim git unzip libzip-dev libpq-dev \
   && docker-php-ext-install zip pdo_mysql pdo_pgsql pgsql
@@ -41,5 +40,10 @@ RUN composer global require "laravel/installer"
 WORKDIR /root
 RUN git clone https://github.com/seebi/dircolors-solarized
 
+COPY ./docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
 EXPOSE 5173
 WORKDIR /var/www
+CMD ["php-fpm"]
