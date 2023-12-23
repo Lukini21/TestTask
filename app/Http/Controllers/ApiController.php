@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductsRequest;
 use App\Models\Product;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
 {
-    public function getProducts(Request $request)
+    public function getProducts(ProductsRequest $request)
     {
         $products = Product::getProducts($request->all());
 
