@@ -7,7 +7,7 @@ php artisan migrate --force
 php artisan db:seed
 php artisan optimize:clear
 
-chmod -R 777 /var/www/storage/logs
+chmod -R 777 /var/www/storage
 chmod -R 777 /var/www/bootstrap/cache
 
 exec "$@"
