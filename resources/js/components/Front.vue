@@ -2,41 +2,55 @@
     <div class="container" :class="{'loading': loading}">
         <el-row :gutter="20">
             <el-col :span="4">
-                <el-row :gutter="20">
-                    <el-col :span="20">
+
+                <el-row class="form-row">
+                    <el-col>
                         <label class="form-label">Name</label>
                         <el-input placeholder="Search by name" v-model="filterQuery.name"></el-input>
                     </el-col>
                 </el-row>
-                <div class="mb-3" v-for="(filter, key) in filters.checkbox">
-                    <label class="form-label">{{ filter.name }}</label>
-                    <div class="form-group">
+
+                <el-row class="form-row" v-for="(filter, key) in filters.checkbox">
+                    <el-col>
+                        <label class="form-label">{{ filter.name }}</label>
                         <el-checkbox-group v-model="filterQuery[key]">
                             <el-checkbox v-for="value in filter.values" :label="value" :key="value">
                                 {{ value }}
                             </el-checkbox>
                         </el-checkbox-group>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <div class="row">
-                        <label class="form-label">Price min</label>
-                    </div>
-                    <div class="row">
-                        <el-input-number :size="'large'" name="min" v-model="filterQuery.price_min"></el-input-number>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <div class="row">
-                        <label class="form-label">Price max</label>
-                    </div>
-                    <div class="row">
-                        <el-input-number :size="'large'" name="max" v-model="filterQuery.price_max"></el-input-number>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <el-button :size="'large'" @click="loadProducts">Search</el-button>
-                </div>
+                    </el-col>
+                </el-row>
+
+                <el-row class="form-row">
+                    <el-col>
+                        <el-row>
+                            <label class="form-label">Price min</label>
+                        </el-row>
+                        <el-row>
+                            <el-input-number class="input-price" :size="'large'" name="min"
+                                             v-model="filterQuery.price_min"></el-input-number>
+                        </el-row>
+                    </el-col>
+                </el-row>
+
+                <el-row class="form-row">
+                    <el-col>
+                        <el-row>
+                            <label class="form-label">Price max</label>
+                        </el-row>
+                        <el-row>
+                            <el-input-number class="input-price" :size="'large'" name="max"
+                                             v-model="filterQuery.price_max"></el-input-number>
+                        </el-row>
+                    </el-col>
+                </el-row>
+
+                <el-row class="form-row">
+                    <el-col>
+                        <el-button :size="'large'" @click="loadProducts">Search</el-button>
+                    </el-col>
+                </el-row>
+
             </el-col>
             <el-col :span="16">
                 <div class="row mt-4">

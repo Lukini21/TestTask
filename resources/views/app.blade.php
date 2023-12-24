@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ًApplication</title>
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/shop-homepage.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/loading.css') }}" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
 <body>

@@ -13,9 +13,6 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                'resources/js/vendor/bootstrap/bootstrap.min.js',
-                'resources/js/vendor/jquery/jquery.js',
-                'resources/js/vendor/jquery/jquery.slim.js'
             ],
             refresh: true,
         }),
