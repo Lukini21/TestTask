@@ -6,7 +6,7 @@
                 <el-row class="form-row">
                     <el-col>
                         <label class="form-label">Name</label>
-                        <el-input placeholder="Search by name" v-model="filterQuery.name"></el-input>
+                        <el-input class="input-name" placeholder="Search by name" v-model="filterQuery.name"></el-input>
                     </el-col>
                 </el-row>
 

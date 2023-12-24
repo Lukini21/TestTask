@@ -133,6 +133,11 @@ body {
     width: 100%;
     padding: 10px;
 }
+
 .input-price {
+    margin-top: 5px;
+}
+
+.input-name {
     margin-top: 5px;
 }
